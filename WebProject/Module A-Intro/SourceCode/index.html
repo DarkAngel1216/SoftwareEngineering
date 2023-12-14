@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebProject</title>
+
+    <!-- 4    Add Open CV -->
+    <script async src="../../Resources/opencv.js" onload="openCvReady()"> </script>
+     <SCript>
+    //       function chooseFile() {
+    //   $("#img-main").click();
+    // }
+
+    var loadFile = function(event) {
+	var image = document.getElementById('img-main');
+	image.src = URL.createObjectURL(event.target.files[0]);
+}
+     </SCript>
+  
+    
+
+    <!-- link to css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Material Icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Main Page -->
+    <div class="main-page">
+        <!-- -----------side-line------------- -->
+        <div class="side-line"></div>
+        <!-- -----------side-bar------------- -->
+        <div class="side-bar">
+            <span class="circle" id="button-rgb"><i class="material-symbols-outlined"
+                    style="font-size: 36px; color: white;">palette</i></span>
+            <span class="circle" id="button-blur"><i class="material-symbols-outlined"
+                    style="font-size: 36px; color: white;">blur_on</i></span>
+            <span class="circle" id="button-gray"><i class="material-symbols-outlined"
+                    style="font-size: 36px; color: white;">contrast</i></span>
+            <span class="circle" id="button-edge"><i class="material-symbols-outlined"
+                    style="font-size: 36px; color: white;">grade</i></span>
+            <!-- <span class="circle blue-circle" id="Upload"><i class="material-symbols-outlined"
+                style="font-size: 36px; color: white;">Upload</i></span> -->
+                <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
+                <label for="file"><img src="../../Resources/Template/114598.png" class="upload-icon"> </label>
+
+        </div>
+        <!-- -----------right-panel------------- -->
+        <div class="right-panel">
+            <!-- -----------header------------ -->
+            <div class="header">
+                <div class="empty"></div>
+                <h1>Photoshop Program</h1>
+                <div class="logo"><img src="../../Resources/Template/Logo.png" alt="" width="120"></div>
+            </div>
+
+            <!-- -----------tablet-comtainerl------------- -->
+            <div class="tablet-comtainer">
+                <img id="tablet-image" src="../../Resources/Template/tablet.png" width="950" height="650" alt="">
+                <Canvas id="main-canvas" width="860" height="600">
+                    <img id="img-main" width="860" height="600" >
+                    <!-- <img id="img-main" src="../../Resources/Template/car.png" width="860" height="600" alt=""> -->
+                </Canvas>
+                
+
+
+
+
+
+
+            </div>
+
+
+
+        </div>
+
+        <!-- link to js -->
+        <script src="main.js"></script>
+</body>
+
+</html>
